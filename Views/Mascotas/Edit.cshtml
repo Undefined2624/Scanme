@@ -1,0 +1,86 @@
+﻿@model QRMascotas.context.Mascota
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/LayoutQrMascotas.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Mascota</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdMascota" />
+           
+            <input type="hidden" asp-for="IdDueno" />
+            <div class="form-group">
+                <label asp-for="IdDuenoAlternativo" class="control-label"></label>
+                <input asp-for="IdDuenoAlternativo" class="form-control" />
+                <span asp-validation-for="IdDuenoAlternativo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEspecie" class="control-label"></label>
+                <input asp-for="IdEspecie" class="form-control" />
+                <span asp-validation-for="IdEspecie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNacimiento" class="control-label"></label>
+                <input asp-for="FechaNacimiento" class="form-control" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdGenero" class="control-label"></label>
+                <input asp-for="IdGenero" class="form-control" />
+                <span asp-validation-for="IdGenero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input asp-for="Esterilizado" class="form-check-input" />
+                    <label asp-for="Esterilizado" class="form-check-label"></label>
+                </div>
+                <span asp-validation-for="Esterilizado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatosExtra" class="control-label"></label>
+                <input asp-for="DatosExtra" class="form-control" />
+                <span asp-validation-for="DatosExtra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Importante" class="control-label"></label>
+                <input asp-for="Importante" class="form-control" />
+                <span asp-validation-for="Importante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qr" class="control-label"></label>
+                <input asp-for="Qr" class="form-control" />
+                <span asp-validation-for="Qr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

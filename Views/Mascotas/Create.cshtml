@@ -1,0 +1,79 @@
+﻿@model QRMascotas.context.Mascota
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/LayoutQrMascotas.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Mascota</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="IdDuenoAlternativo" class="control-label"></label>
+                <select asp-for="IdDuenoAlternativo" class ="form-control" asp-items="ViewBag.IdDuenoAlternativo"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEspecie" class="control-label"></label>
+                <select asp-for="IdEspecie" class ="form-control" asp-items="ViewBag.IdEspecie"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNacimiento" class="control-label"></label>
+                <input asp-for="FechaNacimiento" class="form-control" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IdGenero" /> @Html.DisplayNameFor(model => model.IdGenero)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Esterilizado" /> @Html.DisplayNameFor(model => model.Esterilizado)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatosExtra" class="control-label"></label>
+                <input asp-for="DatosExtra" class="form-control" />
+                <span asp-validation-for="DatosExtra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Importante" class="control-label"></label>
+                <input asp-for="Importante" class="form-control" />
+                <span asp-validation-for="Importante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qr" class="control-label"></label>
+                <input asp-for="Qr" class="form-control" />
+                <span asp-validation-for="Qr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

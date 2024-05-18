@@ -1,0 +1,92 @@
+﻿@model IEnumerable<QRMascotas.context.Mascota>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/LayoutQrMascotas.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdGenero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Esterilizado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatosExtra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Importante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdDuenoNavigation.Nombre)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.IdEspecieNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdGenero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Esterilizado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatosExtra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Importante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDuenoNavigation.UserName)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEspecieNavigation.IdEspecie)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdMascota">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdMascota">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdMascota">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
