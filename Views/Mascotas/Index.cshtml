@@ -5,11 +5,20 @@
     Layout = "~/Views/Shared/LayoutQrMascotas.cshtml";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div class="col">
+    <div class="row">
+        <div class="col-8">
+            <h1 class="text-start">Mis Mascotas</h1>
+        </div>
+        <div class="col-4 d-flex">              
+            <div class="justify-content-center align-content-end">
+                <a class="btn btn-success" asp-action="Create">Agregar nueva mascota</a>
+            @*<button type="button" asp-action="Create" class="btn btn-success">Agregar nueva mascota</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+   
 <table class="table">
     <thead>
         <tr>
