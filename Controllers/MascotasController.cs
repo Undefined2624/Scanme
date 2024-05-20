@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using QRMascotas.ClasesModelo;
 using QRMascotas.context;
 
 namespace QRMascotas.Controllers
@@ -22,10 +23,14 @@ namespace QRMascotas.Controllers
 
             var qrmascotasContext = _context.Mascotas
                 .Include(m => m.IdDuenoNavigation)
+                .Include(m=> m.IdDuenoAlternativoNavigation)
                 .Include(m => m.IdEspecieNavigation)
                 .Where(m => m.IdDueno == userId); // Filtrar las mascotas por el ID del usuario
 
-            return View(await qrmascotasContext.ToListAsync());
+            var mascotaxList = qrmascotasContext.Select(Mascotax.ChangeMascota).ToList();
+
+            return View(mascotaxList);
+
         }
 
         // GET: Mascotas/Create

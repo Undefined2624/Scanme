@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "j/R7yN2+pIKvJn4+J/rV6bw7CANyMwg8HGWFnf0223M=",
+  "Hash": "dImhYII/6ryK6/Fnft2luKQ/B2+urxHw02t8AWWeCSk=",
   "Source": "QRMascotas",
   "BasePath": "_content/QRMascotas",
   "Mode": "Default",
@@ -1188,6 +1188,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\png.png"
+    },
+    {
+      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\qr.jpg",
+      "SourceId": "QRMascotas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\",
+      "BasePath": "_content/QRMascotas",
+      "RelativePath": "Images/qr.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\qr.jpg"
     },
     {
       "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\QrIcon.png",

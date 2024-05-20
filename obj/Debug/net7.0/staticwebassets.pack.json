@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\Images\\png.png"
     },
     {
+      "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\qr.jpg",
+      "PackagePath": "staticwebassets\\Images\\qr.jpg"
+    },
+    {
       "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\css\\QrMascotas.css",
       "PackagePath": "staticwebassets\\css\\QrMascotas.css"
     },

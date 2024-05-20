@@ -15,7 +15,7 @@
         @if (SignInManager.IsSignedIn(User))
         {
              <li class="nav-item dropdown">
-                <a id="manage" class="nav-link dropdown-toggle" asp-area="Identity" role="button" data-bs-toggle="dropdown" aria-expanded="false" asp-page="/Account/Manage/Index" title="Manage">@fullName</a>
+                <a id="manage" class="nav-link dropdown-toggle text-white" asp-area="Identity" role="button" data-bs-toggle="dropdown" aria-expanded="false" asp-page="/Account/Manage/Index" title="Manage">@fullName</a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="manage">
                     <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Mi perfil</a></li>
                     <li><a class="dropdown-item" asp-controller="Mascotas" >Mis Mascotas</a></li>
@@ -23,7 +23,7 @@
             </li>
             <li class="nav-item">
                 <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">Cerrar Sesión</button>
+                    <button id="logout" type="submit" class="nav-link btn btn-link text-white border-0">Cerrar Sesión</button>
                 </form>
             </li>
         }

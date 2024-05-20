@@ -552,3 +552,5 @@ C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\refint\QRMascotas.dll
 C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\QRMascotas.pdb
 C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\QRMascotas.genruntimeconfig.cache
 C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\ref\QRMascotas.dll
+C:\Users\prisc\Downloads\QR-main\QR-main\bin\Debug\net7.0\package-lock.json
+C:\Users\prisc\Downloads\QR-main\QR-main\bin\Debug\net7.0\package.json
