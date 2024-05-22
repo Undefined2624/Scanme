@@ -546,7 +546,6 @@ C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\staticwebassets.develo
 C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\scopedcss\bundle\QRMascotas.styles.css
 C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\scopedcss\projectbundle\QRMascotas.bundle.scp.css
-C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\QRMascotas.csproj.CopyComplete
 C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\QRMascotas.dll
 C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\refint\QRMascotas.dll
 C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\QRMascotas.pdb
@@ -554,3 +553,4 @@ C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\QRMascotas.genruntimec
 C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\ref\QRMascotas.dll
 C:\Users\prisc\Downloads\QR-main\QR-main\bin\Debug\net7.0\package-lock.json
 C:\Users\prisc\Downloads\QR-main\QR-main\bin\Debug\net7.0\package.json
+C:\Users\prisc\Downloads\QR-main\QR-main\obj\Debug\net7.0\QRMascotas.csproj.CopyComplete

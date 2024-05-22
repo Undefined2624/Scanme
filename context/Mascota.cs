@@ -18,7 +18,7 @@ public partial class Mascota
 
     public DateTime FechaNacimiento { get; set; }
 
-    public int IdGenero { get; set; }
+    public bool Genero { get; set; }
 
     public string Color { get; set; } = null!;
 

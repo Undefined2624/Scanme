@@ -5,11 +5,11 @@ namespace QRMascotas.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public string Nombre { get; set; }
-        public string ApellidoP { get; set; }
-        public string ApellidoM { get; set; }
-        public string Direccion { get; set; }
-        public string Contacto { get; set; }
-        public ICollection<Mascota> Mascota { get; set; }
+        public required string Nombre { get; set; }
+        public required string ApellidoP { get; set; }
+        public required string ApellidoM { get; set; }
+        public required string Direccion { get; set; }
+        public required string Contacto { get; set; }
+        public required ICollection<Mascota> Mascota { get; set; }
     }
 }

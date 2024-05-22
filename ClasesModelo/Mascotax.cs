@@ -6,7 +6,7 @@ namespace QRMascotas.ClasesModelo
     public class Mascotax : Mascota
     {
         public string EsterilizadoTexto => Esterilizado ? "Sí" : "No";
-        public string GeneroTexto => IdGenero == 1 ? "Macho" : "Hembra";
+        public string GeneroTexto => Genero ? "Macho" : "Hembra";
 
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime FechaNac => FechaNacimiento.Date;
@@ -26,7 +26,7 @@ namespace QRMascotas.ClasesModelo
                 Nombre = Mascota.Nombre,
                 IdEspecie = Mascota.IdEspecie,
                 FechaNacimiento = Mascota.FechaNacimiento,
-                IdGenero = Mascota.IdGenero,
+                Genero = Mascota.Genero,
                 Color = Mascota.Color,
                 Esterilizado = Mascota.Esterilizado,
                 DatosExtra = Mascota.DatosExtra,
