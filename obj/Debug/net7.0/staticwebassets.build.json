@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dImhYII/6ryK6/Fnft2luKQ/B2+urxHw02t8AWWeCSk=",
+  "Hash": "ia241PWBKoCAeTCaXNSljjrC2eOoGWwzYPiCZV+aDmQ=",
   "Source": "QRMascotas",
   "BasePath": "_content/QRMascotas",
   "Mode": "Default",
@@ -1239,6 +1239,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Tom.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\js\\JavaScript.js",
+      "SourceId": "QRMascotas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\",
+      "BasePath": "_content/QRMascotas",
+      "RelativePath": "js/JavaScript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\JavaScript.js"
     },
     {
       "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\js\\site.js",

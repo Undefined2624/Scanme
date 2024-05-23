@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\js\\JavaScript.js",
+      "PackagePath": "staticwebassets\\js\\JavaScript.js"
+    },
+    {
       "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

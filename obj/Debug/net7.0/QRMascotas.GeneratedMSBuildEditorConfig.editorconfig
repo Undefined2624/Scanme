@@ -44,6 +44,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/prisc/Downloads/QR-main/QR-main/Views/DuenoAlternativo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVlbm9BbHRlcm5hdGl2b1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prisc/Downloads/QR-main/QR-main/Views/DuenoAlternativo/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVlbm9BbHRlcm5hdGl2b1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prisc/Downloads/QR-main/QR-main/Views/DuenoAlternativo/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVlbm9BbHRlcm5hdGl2b1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prisc/Downloads/QR-main/QR-main/Views/DuenoAlternativo/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVlbm9BbHRlcm5hdGl2b1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prisc/Downloads/QR-main/QR-main/Views/DuenoAlternativo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHVlbm9BbHRlcm5hdGl2b1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/prisc/Downloads/QR-main/QR-main/Views/Especies/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
