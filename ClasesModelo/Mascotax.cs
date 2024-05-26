@@ -11,7 +11,8 @@ namespace QRMascotas.ClasesModelo
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime FechaNac => FechaNacimiento.Date;
 
-        public string NombreDuenoA => IdDuenoAlternativoNavigation.Nombre + " " + IdDuenoAlternativoNavigation.ApellidoP + " " + IdDuenoAlternativoNavigation.ApellidoM;
+        
+        public string? NombreDuenoA => IdDuenoAlternativoNavigation != null ? $"{IdDuenoAlternativoNavigation.Nombre} {IdDuenoAlternativoNavigation.ApellidoP} {IdDuenoAlternativoNavigation.ApellidoM}" : null;
         public string NombreDueno => IdDuenoNavigation.Nombre + " " + IdDuenoNavigation.ApellidoP + " " + IdDuenoNavigation.ApellidoM;
 
         public string NombreEspecie => IdEspecieNavigation.Nombre;

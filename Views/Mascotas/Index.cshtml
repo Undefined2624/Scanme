@@ -72,7 +72,7 @@
                                                     @Html.DisplayFor(modelItem => item.NombreDueno)
 
                                                 <td>
-                                                        @Html.DisplayFor(modelItem => item.NombreEspecie)
+                                                    @Html.DisplayFor(modelItem => item.NombreEspecie)
                                                 </td>
                                                 <td>
                                                 <img src="/Images/qr.jpg" style="width:80px; height:80px">
@@ -97,31 +97,40 @@
                                             <div class="d-flex align-items-center">
                                                 <div>
                                                     <b>Dueño alternativo: </b> @Html.DisplayFor(modelItem => item.NombreDuenoA)
-                                                    <a id="CreateDuenoAlternativo" class="btn btn-outline-success btn-sm">
-                                                        <i class="fa-solid fa-plus"></i>
-                                                    </a>                                                
+                                                    @if (item.IdDuenoAlternativo == null)  
+                                                    {
+                                                        <a id="CreateDuenoAlternativo" class="btn btn-outline-success btn-sm" data-mascota-id="@item.IdMascota">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </a>
+                                                    }
+                                                </div>
 
-                                                </div>
-                                                <div class="m-1">
-                                                    <a id="EditarDA" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="duenoModal" asp-controller="DuenoAlternativo" asp-action="Edit" asp-route-id="@item.IdMascota">
-                                                        <i class="fa-solid fa-pen-to-square"></i>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <a class="btn btn-outline-danger btn-sm" asp-action="Delete" asp-route-id="@item.IdMascota">
-                                                        <i class="fa-solid fa-trash"></i>
-                                                    </a>
-                                                </div> 
+                                                @if (item.IdDuenoAlternativo != null)  
+                                                {
+                                                    <div class="m-1">
+                                                        <a id="EditDuenoAlternativo" class="btn btn-outline-warning btn-sm" data-mascota-id="@item.IdMascota" data-dueno-id="@item.IdDuenoAlternativo">
+                                                            Editar
+                                                        </a>
+                                                    </div>
+
+                                                    <div>
+                                                        <a class="btn btn-outline-danger btn-sm" asp-controller="DuenoAlternativo" asp-action="Delete" asp-route-id="@item.IdDuenoAlternativo">
+                                                            <i class="fa-solid fa-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                }                                                                                              
+
                                             </div>
                                             <div>
-                                                <a asp-action="Delete" asp-route-id="@item.IdMascota">
+                                                <a asp-action="Delete" asp-route-id="@item.IdMascota">                                                    
+                                                </a>
+                                                <a id="AdditionalInfo" class="btn btn-outline-info btn-sm" data-mascota-id="@item.IdMascota">
                                                     Información adicional <i class="fa-solid fa-circle-info"></i>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -156,19 +165,11 @@
 
 @section Scripts {
 
-<script>
-        $(document).ready(function () {
+    <script type="text/javascript">
+        var CrearDuenoAlternativo = '@Url.Action("Create", "DuenoAlternativo")';
+        var InformacionAdicional = '@Url.Action("InformacionAdicional", "Mascotas")';
+    </script>   
 
-            $('#CreateDuenoAlternativo').on('click', function () {
-
-                $('#exampleModal').modal('show');
-
-                //obtenemos la vista parcial y la ponemos dentro del modal
-                $.get('@Url.Action("Create", "DuenoAlternativo")', function (data) {
-                    $('#contenidoModal').html(data);
-                });                
-            });            
-        });
-</script>
+    <script src="~/js/JavaScript.js" asp-append-version="true"></script>
 
 }

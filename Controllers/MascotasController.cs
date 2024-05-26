@@ -33,6 +33,13 @@ namespace QRMascotas.Controllers
 
         }
 
+        public IActionResult InformacionAdicional(int mascotaId)
+        {
+            var mascota = _context.Mascotas.FirstOrDefault(m => m.IdMascota == mascotaId);
+            return PartialView("InformacionAdicional", mascota);
+        }
+
+
         // GET: Mascotas/Create
         public IActionResult Create()
         {

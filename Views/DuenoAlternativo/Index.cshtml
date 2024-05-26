@@ -1,61 +1,47 @@
-﻿@model IEnumerable<QRMascotas.context.DuenoAlternativo>
+﻿@model QRMascotas.context.DuenoAlternativo
 
 @{
-    Layout = null;
+   Layout = null;
 }
 
-<!DOCTYPE html>
+<h4>Dueño Alternativo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApellidoP" class="control-label"></label>
+                <input asp-for="ApellidoP" class="form-control" />
+                <span asp-validation-for="ApellidoP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApellidoM" class="control-label"></label>
+                <input asp-for="ApellidoM" class="form-control" />
+                <span asp-validation-for="ApellidoM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contacto" class="control-label"></label>
+                <input asp-for="Contacto" class="form-control" />
+                <span asp-validation-for="Contacto" class="text-danger"></span>
+            </div>
+            <input type="text" name="MascotaId" value="@ViewBag.MascotaId" />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApellidoP)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApellidoM)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contacto)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApellidoP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApellidoM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contacto)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdDuenoAlternativo">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdDuenoAlternativo">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdDuenoAlternativo">Delete</a>
-            </td>
-        </tr>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-    </tbody>
-</table>
-</body>
-</html>

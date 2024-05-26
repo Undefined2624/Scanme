@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using QRMascotas.ClasesModelo;
 using QRMascotas.context;
 
 namespace QRMascotas.Controllers
@@ -45,9 +46,10 @@ namespace QRMascotas.Controllers
         }
 
         // GET: DuenoAlternativo/Create
-        public IActionResult Create()
+        public IActionResult Create(int MascotaId)
         {
-            return View();
+            ViewBag.MascotaId = MascotaId;
+            return PartialView();
         }
 
         // POST: DuenoAlternativo/Create
@@ -55,14 +57,28 @@ namespace QRMascotas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdDuenoAlternativo,Nombre,ApellidoP,ApellidoM,Contacto")] DuenoAlternativo duenoAlternativo)
+        public async Task<IActionResult> Create(DuenoAlternativo duenoAlternativo, int MascotaId)
+
         {
             if (ModelState.IsValid)
             {
                 _context.Add(duenoAlternativo);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                var mascota = await _context.Mascotas.FindAsync(MascotaId);
+
+                if (mascota != null)
+                {
+                    mascota.IdDuenoAlternativo = duenoAlternativo.IdDuenoAlternativo;
+                    _context.Update(mascota);
+
+                    await _context.SaveChangesAsync();
+                }
+
+                return RedirectToAction(nameof(Index), "Mascotas");
             }
+
+            ViewBag.MascotaId = MascotaId;
             return View(duenoAlternativo);
         }
 
@@ -144,14 +160,29 @@ namespace QRMascotas.Controllers
             {
                 return Problem("Entity set 'QrmascotasContext.DuenoAlternativos'  is null.");
             }
+
+            // Obtener las mascotas que tienen el DuenoAlternativo que se quiere eliminar
+            var mascotas = _context.Mascotas.Where(m => m.IdDuenoAlternativo == id).ToList();
+
+            // Desvincular las mascotas del DuenoAlternativo
+            foreach (var mascota in mascotas)
+            {
+                mascota.IdDuenoAlternativo = null; // O asigna un valor predeterminado si es necesario
+            }
+
+            // Guardar los cambios para las mascotas
+            _context.Mascotas.UpdateRange(mascotas);
+            await _context.SaveChangesAsync();
+
             var duenoAlternativo = await _context.DuenoAlternativos.FindAsync(id);
             if (duenoAlternativo != null)
             {
                 _context.DuenoAlternativos.Remove(duenoAlternativo);
+                await _context.SaveChangesAsync();
             }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+
+            return RedirectToAction("Index", "Mascotas");
         }
 
         private bool DuenoAlternativoExists(int id)
