@@ -12,6 +12,17 @@ $(document).ready(function () {
         });
     });
 
+    $('body').on('click', '#EditDuenoAlternativo', function () {
+        debugger;
+        var DuenoId = $(this).data('dueno-id');
+        $('#exampleModal').modal('show');
+
+        // obtenemos la vista parcial y la ponemos dentro del modal
+        $.get(EditarDuenoAlternativo, { DuenoId: DuenoId }, function (data) {
+            $('#contenidoModal').html(data);
+        });
+    });
+
     $('body').on('click', '#AdditionalInfo', function () {
         var MascotaId = $(this).data('mascota-id');
         $('#exampleModal').modal('show');

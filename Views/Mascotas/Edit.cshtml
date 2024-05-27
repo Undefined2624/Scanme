@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/LayoutQrMascotas.cshtml";
 }
 
-<h1>Edit</h1>
+<h3>Editar datos de la mascota</h3>
 
 <h4>Mascota</h4>
 <hr />
@@ -13,14 +13,9 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdMascota" />
-           
+            <input type="hidden" asp-for="IdMascota" />           
             <input type="hidden" asp-for="IdDueno" />
-            <div class="form-group">
-                <label asp-for="IdDuenoAlternativo" class="control-label"></label>
-                <input asp-for="IdDuenoAlternativo" class="form-control" />
-                <span asp-validation-for="IdDuenoAlternativo" class="text-danger"></span>
-            </div>
+            
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
                 <input asp-for="Nombre" class="form-control" />
@@ -33,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="FechaNacimiento" class="control-label"></label>
-                <input asp-for="FechaNacimiento" class="form-control" />
+                <input type="date" asp-for="FechaNacimiento" class="form-control" />
                 <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
             </div>
             <div class="form-group">

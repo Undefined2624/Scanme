@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Runtime.InteropServices;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -113,7 +114,9 @@ namespace QRMascotas.Controllers
                     if (existingMascota != null)
                     {
                         mascota.IdDueno = existingMascota.IdDueno;
+                        mascota.IdDuenoAlternativo = existingMascota.IdDuenoAlternativo;
                     }
+                                     
 
                     _context.Update(mascota);
                     await _context.SaveChangesAsync();

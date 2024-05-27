@@ -83,14 +83,14 @@ namespace QRMascotas.Controllers
         }
 
         // GET: DuenoAlternativo/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? DuenoId)
         {
-            if (id == null || _context.DuenoAlternativos == null)
+            if (DuenoId == null || _context.DuenoAlternativos == null)
             {
                 return NotFound();
             }
 
-            var duenoAlternativo = await _context.DuenoAlternativos.FindAsync(id);
+            var duenoAlternativo = await _context.DuenoAlternativos.FindAsync(DuenoId);
             if (duenoAlternativo == null)
             {
                 return NotFound();
@@ -103,9 +103,9 @@ namespace QRMascotas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdDuenoAlternativo,Nombre,ApellidoP,ApellidoM,Contacto")] DuenoAlternativo duenoAlternativo)
+        public async Task<IActionResult> Edit(int DuenoId, DuenoAlternativo duenoAlternativo)
         {
-            if (id != duenoAlternativo.IdDuenoAlternativo)
+            if (duenoAlternativo.IdDuenoAlternativo != duenoAlternativo.IdDuenoAlternativo)
             {
                 return NotFound();
             }
@@ -128,9 +128,11 @@ namespace QRMascotas.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), "Mascotas");
             }
-            return View(duenoAlternativo);
+
+            return RedirectToAction("Index", "Mascotas");
+
         }
 
         // GET: DuenoAlternativo/Delete/5
@@ -180,7 +182,6 @@ namespace QRMascotas.Controllers
                 _context.DuenoAlternativos.Remove(duenoAlternativo);
                 await _context.SaveChangesAsync();
             }
-
 
             return RedirectToAction("Index", "Mascotas");
         }

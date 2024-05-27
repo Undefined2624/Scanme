@@ -1,37 +1,44 @@
-﻿@model QRMascotas.context.Mascota
+﻿@model QRMascotas.ClasesModelo.Mascotax
 
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/LayoutQrMascotas.cshtml";
 }
 
-<h1>Create</h1>
+    <div class="d-flex justify-content-center align-items-center mt-3">
+        <h3>Agregar una mascota 🐶 🐱</h3>
+    </div>
 
-<h4>Mascota</h4>
+<h4>Datos de la mascota</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+             
+            <div class="row w-100">
+                <div class="col-4">
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label asp-for="IdEspecie" class="control-label">Especie</label>
+                        <select asp-for="IdEspecie" class="form-control" asp-items="ViewBag.IdEspecie"></select>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label asp-for="FechaNac" class="control-label"></label>
+                <input asp-for="FechaNac" class="form-control" />
+                <span asp-validation-for="FechaNac" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>          
             
-            <div class="form-group">
-                <label asp-for="IdDuenoAlternativo" class="control-label"></label>
-                <select asp-for="IdDuenoAlternativo" class ="form-control" asp-items="ViewBag.IdDuenoAlternativo"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
-                <span asp-validation-for="Nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdEspecie" class="control-label"></label>
-                <select asp-for="IdEspecie" class ="form-control" asp-items="ViewBag.IdEspecie"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaNacimiento" class="control-label"></label>
-                <input asp-for="FechaNacimiento" class="form-control" />
-                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
-            </div>
+            
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Genero" /> @Html.DisplayNameFor(model => model.Genero)
@@ -45,7 +52,7 @@
 
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Esterilizado" /> @Html.DisplayNameFor(model => model.Esterilizado)
+            <input class="form-check-input" asp-for="EsterilizadoTexto" /> @Html.DisplayNameFor(model => model.EsterilizadoTexto)
                 </label>
             </div>
             <div class="form-group">
@@ -67,9 +74,7 @@
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
-    </div>
-</div>
-
+   
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

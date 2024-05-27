@@ -108,7 +108,7 @@
                                                 @if (item.IdDuenoAlternativo != null)  
                                                 {
                                                     <div class="m-1">
-                                                        <a id="EditDuenoAlternativo" class="btn btn-outline-warning btn-sm" data-mascota-id="@item.IdMascota" data-dueno-id="@item.IdDuenoAlternativo">
+                                                        <a id="EditDuenoAlternativo" class="btn btn-outline-warning btn-sm" data-dueno-id="@item.IdDuenoAlternativo">
                                                             Editar
                                                         </a>
                                                     </div>
@@ -167,6 +167,7 @@
 
     <script type="text/javascript">
         var CrearDuenoAlternativo = '@Url.Action("Create", "DuenoAlternativo")';
+        var EditarDuenoAlternativo = '@Url.Action("Edit", "DuenoAlternativo")';
         var InformacionAdicional = '@Url.Action("InformacionAdicional", "Mascotas")';
     </script>   
 

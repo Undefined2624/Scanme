@@ -5,17 +5,22 @@ namespace QRMascotas.ClasesModelo
 {
     public class Mascotax : Mascota
     {
+        [Display(Name = "¿Está esterilizado?")]
         public string EsterilizadoTexto => Esterilizado ? "Sí" : "No";
+
+        [Display(Name = "Género")]
         public string GeneroTexto => Genero ? "Macho" : "Hembra";
 
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Fecha de nacimiento 🎂")]
         public DateTime FechaNac => FechaNacimiento.Date;
-
         
         public string? NombreDuenoA => IdDuenoAlternativoNavigation != null ? $"{IdDuenoAlternativoNavigation.Nombre} {IdDuenoAlternativoNavigation.ApellidoP} {IdDuenoAlternativoNavigation.ApellidoM}" : null;
+       
         public string NombreDueno => IdDuenoNavigation.Nombre + " " + IdDuenoNavigation.ApellidoP + " " + IdDuenoNavigation.ApellidoM;
 
-        public string NombreEspecie => IdEspecieNavigation.Nombre;
+        [Display(Name = "Especie")]
+        public string NombreEspecie => IdEspecieNavigation.Nombre;    
 
         public static Mascotax ChangeMascota (Mascota Mascota)
         {
