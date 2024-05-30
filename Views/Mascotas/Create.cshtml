@@ -10,74 +10,92 @@
     </div>
 
 <h4>Datos de la mascota</h4>
-<hr />
 
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-             
-            <div class="row w-100">
-                <div class="col-4">
-                    <div class="form-group">
-                        <label asp-for="Nombre" class="control-label"></label>
-                        <input asp-for="Nombre" class="form-control" />
-                        <span asp-validation-for="Nombre" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="form-group">
-                        <label asp-for="IdEspecie" class="control-label">Especie</label>
-                        <select asp-for="IdEspecie" class="form-control" asp-items="ViewBag.IdEspecie"></select>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="form-group">
-                        <label asp-for="FechaNac" class="control-label"></label>
+<form asp-action="Create">
+   <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row w-100 mt-2">
+        <div class="col-4">
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="FechaNac" class="control-label"></label>
                 <input asp-for="FechaNac" class="form-control" />
                 <span asp-validation-for="FechaNac" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>          
-            
-            
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Genero" /> @Html.DisplayNameFor(model => model.Genero)
-                </label>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label asp-for="Color" class="control-label"></label>
                 <input asp-for="Color" class="form-control" />
                 <span asp-validation-for="Color" class="text-danger"></span>
             </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <label asp-for="IdEspecie" class="control-label">Especie</label>
+                <select asp-for="IdEspecie" class="form-select" asp-items="ViewBag.IdEspecie"></select>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Genero" class="control-label">Género</label>
+                <select id="Genero" class="form-select">
+                    <option selected>Selecciona una opción</option>
+                    <option value="1">Macho</option>
+                    <option value="0">Hembra</option>
+                </select>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Esterilizado" class="control-label">¿Está esterilizado/a?</label>
+                <select id="Esterilizado" class="form-select">
+                    <option selected>Selecciona una opción</option>
+                    <option value="1">Sí</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+        </div>
 
-            <div class="form-group form-check">
-                <label class="form-check-label">
-            <input class="form-check-input" asp-for="EsterilizadoTexto" /> @Html.DisplayNameFor(model => model.EsterilizadoTexto)
-                </label>
+        <div class="col-4 text-center">
+            <img src="~/Images/George.jpg" class="rounded img-thumbnail w-50 h-auto" alt="Imagen de la mascota">
+        </div>       
+    </div>
+    <div class="row mt-3 w-100">
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4 d-flex align-content-center justify-content-center">
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Sube una foto de tu mascota aquí❗</label>
+                <input class="form-control form-control-sm" id="formFileSm" type="file">
             </div>
-            <div class="form-group">
-                <label asp-for="DatosExtra" class="control-label"></label>
-                <input asp-for="DatosExtra" class="form-control" />
-                <span asp-validation-for="DatosExtra" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row w-100 mt-0">
+        <div class="col-6">
+            <label asp-for="DatosExtra" class="form-label">Datos extra</label>
+            <textarea asp-for="DatosExtra" class="form-control"></textarea>
+            <span asp-validation-for="DatosExtra" class="text-danger"></span>
+        </div>
+        <div class="col-6">
+            <label asp-for="Importante" class="form-label">Importante ⚠️</label>
+            <textarea asp-for="Importante" class="form-control"></textarea>
+            <span asp-validation-for="Importante" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row w-100 mt-3">
+        <div class="col-6 d-flex justify-content-start align-items-start">
+            <a asp-action="Index" class="w-25 btn btn-outline-primary mb-1 align-items-center">Volver <i class="fa-solid fa-rotate-left"></i></a>
+        </div>
+        <div class="col-6">
+            <div class="form-group d-flex justify-content-end align-items-end">
+                <button type="submit" value="Create" class="btn btn-outline-success mb-1 align-items-center">Agregar mascota <i class="fa-solid fa-plus"></i></button>
             </div>
-            <div class="form-group">
-                <label asp-for="Importante" class="control-label"></label>
-                <input asp-for="Importante" class="form-control" />
-                <span asp-validation-for="Importante" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Qr" class="control-label"></label>
-                <input asp-for="Qr" class="form-control" />
-                <span asp-validation-for="Qr" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-   
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+        </div>
+    </div>
+    
+</form>
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
