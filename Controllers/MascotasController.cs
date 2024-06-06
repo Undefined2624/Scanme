@@ -89,6 +89,22 @@ namespace QRMascotas.Controllers
 
             ViewData["IdDuenoAlternativo"] = new SelectList(_context.DuenoAlternativos, "IdDuenoAlternativo", "Nombre", mascota.IdDuenoAlternativo);
             ViewData["IdEspecie"] = new SelectList(_context.Especies, "IdEspecie", "Nombre", mascota.IdEspecie);
+
+            // Para Género
+            ViewBag.Genero = new SelectList(new[]
+            {
+                new { Id = true, Nombre = "Macho" },
+                new { Id = false, Nombre = "Hembra" }
+            }, "Id", "Nombre", mascota.Genero);
+
+            // Para Esterilizado
+            ViewBag.Esterilizado = new SelectList(new[]
+            {
+                new { Id = true, Nombre = "Sí" },
+                new { Id = false, Nombre = "No" }
+            }, "Id", "Nombre", mascota.Esterilizado);
+
+
             return View(mascota);
         }
 
@@ -137,6 +153,7 @@ namespace QRMascotas.Controllers
 
             ViewData["IdDuenoAlternativo"] = new SelectList(_context.DuenoAlternativos, "IdDuenoAlternativo", "Nombre", mascota.IdDuenoAlternativo);
             ViewData["IdEspecie"] = new SelectList(_context.Especies, "IdEspecie", "Nombre", mascota.IdEspecie);
+                        
             return View(mascota);
         }
 

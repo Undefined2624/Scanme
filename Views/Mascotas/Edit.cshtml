@@ -5,74 +5,93 @@
     Layout = "~/Views/Shared/LayoutQrMascotas.cshtml";
 }
 
-<h3>Editar datos de la mascota</h3>
+<div class="text-center mt-3">
+    <h3>Modificar datos de la mascota 🐶 🐱</h3>
+</div>
 
-<h4>Mascota</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdMascota" />           
-            <input type="hidden" asp-for="IdDueno" />
-            
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
-                <span asp-validation-for="Nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdEspecie" class="control-label"></label>
-                <input asp-for="IdEspecie" class="form-control" />
-                <span asp-validation-for="IdEspecie" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaNacimiento" class="control-label"></label>
-                <input type="date" asp-for="FechaNacimiento" class="form-control" />
-                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Genero" class="control-label"></label>
-                <input asp-for="Genero" class="form-control" />
-                <span asp-validation-for="Genero" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Color" class="control-label"></label>
-                <input asp-for="Color" class="form-control" />
-                <span asp-validation-for="Color" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="form-check">
-                    <input asp-for="Esterilizado" class="form-check-input" />
-                    <label asp-for="Esterilizado" class="form-check-label"></label>
-                </div>
-                <span asp-validation-for="Esterilizado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DatosExtra" class="control-label"></label>
-                <input asp-for="DatosExtra" class="form-control" />
-                <span asp-validation-for="DatosExtra" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Importante" class="control-label"></label>
-                <input asp-for="Importante" class="form-control" />
-                <span asp-validation-for="Importante" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Qr" class="control-label"></label>
-                <input asp-for="Qr" class="form-control" />
-                <span asp-validation-for="Qr" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<h4>Datos de la mascota <i class="fa-solid fa-paw"></i> </h4>
+
+<form asp-action="Edit">
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<input type="hidden" asp-for="IdMascota" />           
+<input type="hidden" asp-for="IdDueno" />
+
+<div class="row w-100 mt-2">
+
+    <div class="col-4">
+        <div class="form-group">
+            <label asp-for="Nombre" class="control-label"></label>
+            <input asp-for="Nombre" class="form-control" />
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+        </div>
+        <div class="form-group mt-3">
+            <label asp-for="FechaNacimiento" class="control-label"></label>
+            <input type="date" asp-for="FechaNacimiento" class="form-control" />
+            <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+        </div>
+        <div class="form-group mt-3">
+            <label asp-for="Color" class="control-label"></label>
+            <input asp-for="Color" class="form-control" />
+            <span asp-validation-for="Color" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="form-group">
+            <label asp-for="IdEspecie" class="control-label">Especie</label>
+            <select asp-for="IdEspecie" class="form-select" asp-items="ViewBag.IdEspecie"></select>
+            <span asp-validation-for="IdEspecie" class="text-danger"></span>
+        </div>
+        <div class="form-group mt-3">
+            <label asp-for="Genero" class="control-label">Género</label>
+            <select asp-for="Genero" class="form-select" asp-items="ViewBag.Genero"></select>
+            <span asp-validation-for="Genero" class="text-danger"></span>
+        </div>
+        <div class="form-group mt-3">
+            <label asp-for="Esterilizado" class="control-label">¿Está esterilizado/a?</label>
+            <select asp-for="Esterilizado" class="form-select" asp-items="ViewBag.Esterilizado"></select>
+            <span asp-validation-for="Esterilizado" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="col-4 text-center">
+        <div class="text-center">
+            <img src="~/Images/George.jpg" class="rounded img-thumbnail w-50 h-auto" alt="Imagen de la mascota">
+        </div>
+        <div class="text-center mt-1">
+            <label for="formFileSm" class="form-label">Sube una foto de tu mascota aquí❗</label>
+            <input class="form-control form-control-sm" id="formFileSm" type="file">
+        </div>
+    </div>
+
+</div>
+
+<div class="row w-100 mt-0">
+    <div class="col-6">
+        <label asp-for="DatosExtra" class="form-label">Datos extra</label>
+        <textarea asp-for="DatosExtra" class="form-control" placeholder="Alérgico a la canela"></textarea>
+        <span asp-validation-for="DatosExtra" class="text-danger"></span>
+    </div>
+    <div class="col-6">
+        <label asp-for="Importante" class="form-label">Importante ⚠️</label>
+        <textarea asp-for="Importante" class="form-control" placeholder="Diabético, medicado con..."></textarea>
+        <span asp-validation-for="Importante" class="text-danger"></span>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="row w-100 mt-3">
+    <div class="col-6 d-flex justify-content-start align-items-start">
+        <a asp-action="Index" class="w-25 btn btn-outline-primary mb-1 align-items-center">Volver <i class="fa-solid fa-rotate-left"></i></a>
+    </div>
+    <div class="col-6">
+        <div class="form-group d-flex justify-content-end align-items-end">
+                <button type="submit" value="Edit" class="btn btn-outline-success mb-1 align-items-center">Modificar mascota <i class="fa-solid fa-pen-to-square"></i></button>
+        </div>
+    </div>
 </div>
+    
+</form>
+
 
 @section Scripts {
     @{
