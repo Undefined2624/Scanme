@@ -158,9 +158,9 @@ namespace QRMascotas.Controllers
         }
 
         // GET: Mascotas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? MascotaId)
         {
-            if (id == null || _context.Mascotas == null)
+            if (MascotaId == null || _context.Mascotas == null)
             {
                 return NotFound();
             }
@@ -168,7 +168,7 @@ namespace QRMascotas.Controllers
             var mascota = await _context.Mascotas
                 .Include(m => m.IdDuenoAlternativoNavigation)
                 .Include(m => m.IdEspecieNavigation)
-                .FirstOrDefaultAsync(m => m.IdMascota == id);
+                .FirstOrDefaultAsync(m => m.IdMascota == MascotaId);
             if (mascota == null)
             {
                 return NotFound();
@@ -180,13 +180,13 @@ namespace QRMascotas.Controllers
         // POST: Mascotas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int IdMascota)
         {
             if (_context.Mascotas == null)
             {
                 return Problem("Entity set 'QrmascotasContext.Mascotas'  is null.");
             }
-            var mascota = await _context.Mascotas.FindAsync(id);
+            var mascota = await _context.Mascotas.FindAsync(IdMascota);
             if (mascota != null)
             {
                 _context.Mascotas.Remove(mascota);

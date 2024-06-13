@@ -9,48 +9,62 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
 </head>
 <body>
 
-<h4>DuenoAlternativo</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdDuenoAlternativo" />
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
-                <span asp-validation-for="Nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApellidoP" class="control-label"></label>
-                <input asp-for="ApellidoP" class="form-control" />
-                <span asp-validation-for="ApellidoP" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApellidoM" class="control-label"></label>
-                <input asp-for="ApellidoM" class="form-control" />
-                <span asp-validation-for="ApellidoM" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contacto" class="control-label"></label>
-                <input asp-for="Contacto" class="form-control" />
-                <span asp-validation-for="Contacto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-               
-        </form>
+    <div class="card mb-2">
+        <div class="card-header bg-primary">
+            <h5 class="text-center text-white">Modificar datos de Dueño alternativo <i class="fa-solid fa-paw"></i></h5>
+        </div>
     </div>
-</div>
+<hr />
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="IdDuenoAlternativo" />
+
+        <div class="row mb-2">
+            <div class="col-6">
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label asp-for="ApellidoP" class="control-label">Apellido paterno</label>
+                    <input asp-for="ApellidoP" class="form-control" />
+                    <span asp-validation-for="ApellidoP" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-6">
+                <div class="form-group">
+                    <label asp-for="ApellidoM" class="control-label"></label>
+                    <input asp-for="ApellidoM" class="form-control" />
+                    <span asp-validation-for="ApellidoM" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label asp-for="Contacto" class="control-label"></label>
+                    <input asp-for="Contacto" class="form-control" />
+                    <span asp-validation-for="Contacto" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div class="form-group text-center">
+                    <button type="submit" value="Save" class="btn btn-outline-primary mb-1 align-items-center">Modificar dueño alternativo</button>
+                </div>
+            </div>
+        </div>
+        </form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

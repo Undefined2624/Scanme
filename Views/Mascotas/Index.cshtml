@@ -12,11 +12,13 @@
             <a class="btn btn-outline-primary ml-auto mb-3" asp-action="Create">Agregar Mascota <i class="fa-solid fa-plus"></i></a>
         </div>
         
-        @foreach (var item in Model)
+    @foreach (var item in Model)
         {
             <div class="card border-warning mb-3 ps-2">
                 <div style="width: 67%">
-                <h5 class="card-title bg-warning rounded text-white w-25 text-center mt-2 mb-1 p-1">@Html.DisplayFor(modelItem => item.Nombre)</h5></div>
+                    <h5 class="card-title bg-warning rounded text-white w-25 text-center mt-2 mb-1 p-1">@Html.DisplayFor(modelItem => item.Nombre)</h5>
+                </div>
+
                 <div class="row g-0 m-0">
                     <div class="col-2 text-center">
                         <img src="/Images/George.jpg" class="rounded img-thumbnail w-100 h-auto">
@@ -24,144 +26,133 @@
                     <div class="col-10">
                         <div class="card-body">
                             
-                            <div class="table-responsive card-text">
-                                <table class="table w-100 mt-0">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th>
-                                                Fecha de Nacimiento
-                                            </th>
-                                            <th>
-                                                Género
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Color)
-                                            </th>
-                                            <th>
-                                                ¿Esterilizado?
-                                            </th>                                           
-                                            <th>
-                                                Nombre del dueño
-                                            </th>
+                    <div class="table-responsive card-text">
+                        <table class="table w-100 mt-0">
+                            <thead>
+                                <tr class="text-center">
+                                    <th>
+                                        Fecha de Nacimiento
+                                    </th>
+                                    <th>
+                                        Género
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Color)
+                                    </th>
+                                    <th>
+                                        ¿Esterilizado?
+                                    </th>                                           
+                                    <th>
+                                         Nombre del dueño
+                                    </th>
 
-                                            <th>
-                                                Especie
-                                            </th>
-                                            <th>
-                                                Código QR
-                                            </th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>                                       
-                                            <tr class="text-center align-middle">
+                                    <th>
+                                         Especie
+                                    </th>
+                                    <th>
+                                         Código QR
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>                                       
+                                <tr class="text-center align-middle">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FechaNac)
+                                    </td>
 
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.FechaNac)
-                                                </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GeneroTexto)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Color)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EsterilizadoTexto)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NombreDueno)
 
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.GeneroTexto)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Color)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.EsterilizadoTexto)
-                                                </td>
-                                                
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.NombreDueno)
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NombreEspecie)
+                                    </td>
+                                    <td>
+                                        <img src="/Images/qr.jpg" style="width:80px; height:80px">
+                                    </td>
+                                    <td>
+                                         <div class="m-1">
+                                            <a class="btn btn-outline-warning btn-sm" asp-action="Edit" asp-route-id="@item.IdMascota">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </a>
+                                         </div>
+                                                <a class="btn btn-outline-danger btn-sm" id="EliminarMascota" data-mascota-id="@item.IdMascota">
+                                            <i class="fa-solid fa-trash"></i>
+                                         </a>
+                                    </td>
+                                    </tr>                                        
+                            </tbody>
+                        </table>
+                    </div> 
+                    <div class="card-text">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <b>Dueño alternativo: </b> @Html.DisplayFor(modelItem => item.NombreDuenoA)
 
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.NombreEspecie)
-                                                </td>
-                                                <td>
-                                                <img src="/Images/qr.jpg" style="width:80px; height:80px">
-                                                </td>
-                                                <td>
-                                               <div class="m-1">
-                                                    <a class="btn btn-outline-warning btn-sm" asp-action="Edit" asp-route-id="@item.IdMascota">
+                                            @if (item.IdDuenoAlternativo == null)  
+                                                {
+                                                    <a id="CreateDuenoAlternativo" class="btn btn-outline-success btn-sm" data-mascota-id="@item.IdMascota">
+                                                        <i class="fa-solid fa-plus"></i>
+                                                    </a>
+                                                }
+                                        </div>
+
+                                        @if (item.IdDuenoAlternativo != null)  
+                                            {
+                                                <div class="m-1">
+                                                    <a id="EditDuenoAlternativo" class="btn btn-outline-warning btn-sm" data-dueno-id="@item.IdDuenoAlternativo">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </a>
-                                               </div>                 
-                                                
-                                                <a class="btn btn-outline-danger btn-sm" asp-action="Delete" asp-route-id="@item.IdMascota">
-                                                    <i class="fa-solid fa-trash"></i>
-                                                </a>
-                                            </td>
-                                            </tr>                                        
-                                    </tbody>
-                                </table>
-                            </div> 
-                            <div class="card-text">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="d-flex align-items-center">
-                                                <div>
-                                                    <b>Dueño alternativo: </b> @Html.DisplayFor(modelItem => item.NombreDuenoA)
-                                                    @if (item.IdDuenoAlternativo == null)  
-                                                    {
-                                                        <a id="CreateDuenoAlternativo" class="btn btn-outline-success btn-sm" data-mascota-id="@item.IdMascota">
-                                                            <i class="fa-solid fa-plus"></i>
-                                                        </a>
-                                                    }
                                                 </div>
 
-                                                @if (item.IdDuenoAlternativo != null)  
-                                                {
-                                                    <div class="m-1">
-                                                        <a id="EditDuenoAlternativo" class="btn btn-outline-warning btn-sm" data-dueno-id="@item.IdDuenoAlternativo">
-                                                            <i class="fa-solid fa-pen-to-square"></i>
-                                                        </a>
-                                                    </div>
-
-                                                    <div>
-                                                        <a class="btn btn-outline-danger btn-sm" asp-controller="DuenoAlternativo" asp-action="Delete" asp-route-id="@item.IdDuenoAlternativo">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </a>
-                                                    </div>
-                                                }                                                                                              
-
-                                            </div>
-                                            <div>
-                                                <a asp-action="Delete" asp-route-id="@item.IdMascota">                                                    
-                                                </a>
-                                                <a id="AdditionalInfo" class="btn btn-outline-info btn-sm" data-mascota-id="@item.IdMascota">
-                                                    Información adicional <i class="fa-solid fa-circle-info"></i>
-                                                </a>
-                                            </div>
-                                        </div>
+                                                <div>
+                                                    <a class="btn btn-outline-danger btn-sm" id="EliminarDuenoAlternativo" data-dueno-id="@item.IdDuenoAlternativo">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </a>
+                                                </div>
+                                             }                                                                                              
                                     </div>
+                                        <div>
+                                            <a asp-action="Delete" asp-route-id="@item.IdMascota"></a>
+                                            <a id="AdditionalInfo" class="btn btn-outline-info btn-sm" data-mascota-id="@item.IdMascota">
+                                                Información adicional <i class="fa-solid fa-circle-info"></i>
+                                                </a>
+                                        </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+     </div>
+</div>
         }
                       
-    </div>
+</div>
 </div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">                
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">                
-               
+            <div class="modal-body">
                 <div id="contenidoModal"></div>
 
-            </div>
-            <div>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
@@ -173,8 +164,11 @@
         var CrearDuenoAlternativo = '@Url.Action("Create", "DuenoAlternativo")';
         var EditarDuenoAlternativo = '@Url.Action("Edit", "DuenoAlternativo")';
         var InformacionAdicional = '@Url.Action("InformacionAdicional", "Mascotas")';
+        var EliminarMascota = '@Url.Action("Delete", "Mascotas")';
+        var EliminarDuenoAlternativo = '@Url.Action("Delete", "DuenoAlternativo")';
     </script>   
 
     <script src="~/js/JavaScript.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 }

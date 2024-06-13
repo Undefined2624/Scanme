@@ -25,6 +25,8 @@ $(document).ready(function () {
 
     $('body').on('click', '#AdditionalInfo', function () {
         var MascotaId = $(this).data('mascota-id');
+        $('.modal-dialog').addClass('modal-lg');
+
         $('#exampleModal').modal('show');
 
         // Obtenemos la vista parcial y la ponemos dentro del modal
@@ -32,7 +34,25 @@ $(document).ready(function () {
             $('#contenidoModal').html(data);
         });
     });
+    debugger;
+    $('body').on('click', '#EliminarMascota', function () {
+        var MascotaId = $(this).data('mascota-id');        
+        $('#exampleModal').modal('show');
 
+        // Obtenemos la vista parcial y la ponemos dentro del modal
+        $.get(EliminarMascota, { MascotaId: MascotaId }, function (data) {
+            $('#contenidoModal').html(data);
+        });
+    });
 
+    $('body').on('click', '#EliminarDuenoAlternativo', function () {
+        var DuenoId = $(this).data('dueno-id');
+        $('#exampleModal').modal('show');
+
+        // Obtenemos la vista parcial y la ponemos dentro del modal
+        $.get(EliminarDuenoAlternativo, { DuenoId: DuenoId }, function (data) {
+            $('#contenidoModal').html(data);
+        });
+    });
 
 });

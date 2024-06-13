@@ -136,15 +136,15 @@ namespace QRMascotas.Controllers
         }
 
         // GET: DuenoAlternativo/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? DuenoId)
         {
-            if (id == null || _context.DuenoAlternativos == null)
+            if (DuenoId == null || _context.DuenoAlternativos == null)
             {
                 return NotFound();
             }
 
             var duenoAlternativo = await _context.DuenoAlternativos
-                .FirstOrDefaultAsync(m => m.IdDuenoAlternativo == id);
+                .FirstOrDefaultAsync(m => m.IdDuenoAlternativo == DuenoId);
             if (duenoAlternativo == null)
             {
                 return NotFound();
@@ -156,7 +156,7 @@ namespace QRMascotas.Controllers
         // POST: DuenoAlternativo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int DuenoId)
         {
             if (_context.DuenoAlternativos == null)
             {
@@ -164,7 +164,7 @@ namespace QRMascotas.Controllers
             }
 
             // Obtener las mascotas que tienen el DuenoAlternativo que se quiere eliminar
-            var mascotas = _context.Mascotas.Where(m => m.IdDuenoAlternativo == id).ToList();
+            var mascotas = _context.Mascotas.Where(m => m.IdDuenoAlternativo == DuenoId).ToList();
 
             // Desvincular las mascotas del DuenoAlternativo
             foreach (var mascota in mascotas)
@@ -176,7 +176,7 @@ namespace QRMascotas.Controllers
             _context.Mascotas.UpdateRange(mascotas);
             await _context.SaveChangesAsync();
 
-            var duenoAlternativo = await _context.DuenoAlternativos.FindAsync(id);
+            var duenoAlternativo = await _context.DuenoAlternativos.FindAsync(DuenoId);
             if (duenoAlternativo != null)
             {
                 _context.DuenoAlternativos.Remove(duenoAlternativo);
@@ -186,9 +186,9 @@ namespace QRMascotas.Controllers
             return RedirectToAction("Index", "Mascotas");
         }
 
-        private bool DuenoAlternativoExists(int id)
+        private bool DuenoAlternativoExists(int DuenoId)
         {
-          return (_context.DuenoAlternativos?.Any(e => e.IdDuenoAlternativo == id)).GetValueOrDefault();
+          return (_context.DuenoAlternativos?.Any(e => e.IdDuenoAlternativo == DuenoId)).GetValueOrDefault();
         }
     }
 }

@@ -7,32 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scanme</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <!-- Añadir Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/QRMascotas.styles.css" asp-append-version="true" />
-
-
 </head>
 
 <body>
-    
-    <div class="card border-info mb-3">
-        <div class="card-header">
-            <i class="fa-solid fa-triangle-exclamation"></i>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Información importante</h5>
-            <p class="card-text"> @Html.DisplayFor(model => model.Importante)</p>
+    <div class="card border-warning mb-2">
+        <div class="card-header bg-warning">
+            <h5 class="text-center text-white">Información adicional <i class="fa-solid fa-paw"></i></h5>
         </div>
     </div>
-    <div class="card border-info mb-3">
-        <div class="card-header"><i class="fa-solid fa-lightbulb"></i></div>
+
+    <div class="card border-warning mb-2">
+
         <div class="card-body">
-            <h5 class="card-title">Datos extra</h5>
-            <p class="card-text">@Html.DisplayFor(model => model.DatosExtra)</p>
+            <h6 class=""><i class="fa-solid fa-triangle-exclamation"></i> Información importante</h6>
+            @if (!string.IsNullOrEmpty(Model.Importante))
+            {
+                <p class="card-text">@Model.Importante</p>
+            }
+            else
+            {
+                <p class="card-text text-danger">No hay información importante</p>
+            }
+
+        </div>
+    </div>
+
+    <div class="card border-warning mb-2">
+
+        <div class="card-body">
+            <h6><i class="fa-solid fa-lightbulb"></i> Datos extra</h6>
+
+            @if (!string.IsNullOrEmpty(Model.DatosExtra))
+            {
+                <p class="card-text">@Model.DatosExtra</p>
+            }
+            else
+            {
+                <p class="card-text text-danger">No hay datos extra</p>
+            }
+
         </div>
     </div>    
        
