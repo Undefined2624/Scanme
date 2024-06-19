@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\QRMascotas.bundle.scp.css",
-      "PackagePath": "staticwebassets\\QRMascotas.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\George.jpg",
       "PackagePath": "staticwebassets\\Images\\George.jpg"
     },

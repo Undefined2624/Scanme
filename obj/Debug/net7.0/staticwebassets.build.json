@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ia241PWBKoCAeTCaXNSljjrC2eOoGWwzYPiCZV+aDmQ=",
+  "Hash": "lMWBgRb1pwKZfabqSufYIZadk542/yEUBplcyq7Uh+4=",
   "Source": "QRMascotas",
   "BasePath": "_content/QRMascotas",
   "Mode": "Default",
@@ -1035,40 +1035,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\prisc\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.18\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
-      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\obj\\Debug\\net7.0\\scopedcss\\bundle\\QRMascotas.styles.css",
-      "SourceId": "QRMascotas",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/QRMascotas",
-      "RelativePath": "QRMascotas.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\obj\\Debug\\net7.0\\scopedcss\\bundle\\QRMascotas.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\QRMascotas.bundle.scp.css",
-      "SourceId": "QRMascotas",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/QRMascotas",
-      "RelativePath": "QRMascotas.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\QRMascotas.bundle.scp.css"
     },
     {
       "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\css\\QrMascotas.css",
