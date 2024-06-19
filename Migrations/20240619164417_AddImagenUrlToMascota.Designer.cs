@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QRMascotas.context;
 
@@ -11,9 +12,11 @@ using QRMascotas.context;
 namespace QRMascotas.Migrations
 {
     [DbContext(typeof(QrmascotasContext))]
-    partial class QrmascotasContextModelSnapshot : ModelSnapshot
+    [Migration("20240619164417_AddImagenUrlToMascota")]
+    partial class AddImagenUrlToMascota
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -30,6 +30,8 @@ public partial class Mascota
 
     public string? Qr { get; set; }
 
+    public string? ImagenUrl { get; set; }
+
     public virtual DuenoAlternativo? IdDuenoAlternativoNavigation { get; set; }
 
     public virtual ApplicationUser IdDuenoNavigation { get; set; } = null!;
