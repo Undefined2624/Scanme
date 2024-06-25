@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WHSiOroWBiM+vPyumqZarvtlkQZCPYPJIJ0T0z6UHzk=",
+  "Hash": "u054BmGW8c/A+xIPKDb+N2kY9gDn1tiJ0ktLSGbGfqE=",
   "Source": "QRMascotas",
   "BasePath": "_content/QRMascotas",
   "Mode": "Default",
@@ -1088,12 +1088,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\2837f426-e888-425d-b7ac-628da9631091.jpg",
+      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\a8bead08-ca0a-40f4-9d28-56c1c951e4a7.jpg",
       "SourceId": "QRMascotas",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\",
       "BasePath": "_content/QRMascotas",
-      "RelativePath": "Images/2837f426-e888-425d-b7ac-628da9631091.jpg",
+      "RelativePath": "Images/a8bead08-ca0a-40f4-9d28-56c1c951e4a7.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1102,24 +1102,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\2837f426-e888-425d-b7ac-628da9631091.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\2b0c93af-5679-4794-92ec-eef01bd999e8.jpg",
-      "SourceId": "QRMascotas",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\",
-      "BasePath": "_content/QRMascotas",
-      "RelativePath": "Images/2b0c93af-5679-4794-92ec-eef01bd999e8.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\2b0c93af-5679-4794-92ec-eef01bd999e8.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\a8bead08-ca0a-40f4-9d28-56c1c951e4a7.jpg"
     },
     {
       "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\default.jpg",

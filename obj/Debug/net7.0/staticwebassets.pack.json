@@ -1,16 +1,12 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\2837f426-e888-425d-b7ac-628da9631091.jpg",
-      "PackagePath": "staticwebassets\\Images\\2837f426-e888-425d-b7ac-628da9631091.jpg"
-    },
-    {
-      "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\2b0c93af-5679-4794-92ec-eef01bd999e8.jpg",
-      "PackagePath": "staticwebassets\\Images\\2b0c93af-5679-4794-92ec-eef01bd999e8.jpg"
-    },
-    {
       "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\QrIcon.png",
       "PackagePath": "staticwebassets\\Images\\QrIcon.png"
+    },
+    {
+      "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\a8bead08-ca0a-40f4-9d28-56c1c951e4a7.jpg",
+      "PackagePath": "staticwebassets\\Images\\a8bead08-ca0a-40f4-9d28-56c1c951e4a7.jpg"
     },
     {
       "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\default.jpg",

@@ -67,6 +67,8 @@ namespace QRMascotas.Controllers
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 mascota.IdDueno = userId;
+            
+                var ImagenActual = mascota.ImagenUrl;
 
                 if (ImagenUrl != null && ImagenUrl.Length > 0)
                 {
@@ -84,6 +86,9 @@ namespace QRMascotas.Controllers
                 }
 
                 _context.Add(mascota);
+
+                
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -141,6 +146,7 @@ namespace QRMascotas.Controllers
             ModelState.Remove("IdDuenoNavigation");
             ModelState.Remove("IdEspecieNavigation");
 
+
             if (ModelState.IsValid)
             {
                 try
@@ -151,15 +157,41 @@ namespace QRMascotas.Controllers
                     {
                         mascota.IdDueno = existingMascota.IdDueno;
                         mascota.IdDuenoAlternativo = existingMascota.IdDuenoAlternativo;
+                        mascota.ImagenUrl = existingMascota.ImagenUrl;
+                    }
+
+                    var ImagenActual = mascota.ImagenUrl;
+                    
+                    //A continuación guardamos el nombre de la imagen actual quitandole /Images/
+                    if (ImagenActual != null)
+                    {
+                        ImagenActual = ImagenActual.Replace("/Images/", "");
+                    }
+
+                    var imagePathActual = Path.Combine(_hostEnvironment.WebRootPath, "Images", ImagenActual);
+
+                    //Se elimina la antigua imagen de los archivos
+                    if (ImagenActual != null)
+                    {
+                       
+                        if (System.IO.File.Exists(imagePathActual))
+                        {
+                            System.IO.File.Delete(imagePathActual);
+                        }
                     }
 
                     if (ImagenUrl != null && ImagenUrl.Length > 0)
                     {
-                        var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "Images", ImagenUrl.FileName);
+
+                        //A continuación se le dará un nombre único a la imagen: 
+
+                        string NombreImagen = Guid.NewGuid().ToString() + Path.GetExtension(ImagenUrl.FileName);
+                        var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "Images", NombreImagen);
+
                         using (var fileStream = new FileStream(imagePath, FileMode.Create))
                         {
                             await ImagenUrl.CopyToAsync(fileStream);
-                            mascota.ImagenUrl = "/Images/" + ImagenUrl.FileName;
+                            mascota.ImagenUrl = "/Images/" + NombreImagen;
                         }
                     }
                     _context.Update(mascota);
@@ -181,7 +213,10 @@ namespace QRMascotas.Controllers
 
             ViewData["IdDuenoAlternativo"] = new SelectList(_context.DuenoAlternativos, "IdDuenoAlternativo", "Nombre", mascota.IdDuenoAlternativo);
             ViewData["IdEspecie"] = new SelectList(_context.Especies, "IdEspecie", "Nombre", mascota.IdEspecie);
-                        
+
+            
+
+
             return View(mascota);
         }
 
