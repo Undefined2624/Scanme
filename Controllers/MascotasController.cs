@@ -70,11 +70,16 @@ namespace QRMascotas.Controllers
 
                 if (ImagenUrl != null && ImagenUrl.Length > 0)
                 {
-                    var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "Images", ImagenUrl.FileName);
+                    //A continuación se le dará un nombre único a la imagen: 
+
+                    string NombreImagen = Guid.NewGuid().ToString() + Path.GetExtension(ImagenUrl.FileName);
+                    var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "Images", NombreImagen);
+
+                    
                     using (var fileStream = new FileStream(imagePath, FileMode.Create))
                     {
                         await ImagenUrl.CopyToAsync(fileStream);
-                         mascota.ImagenUrl = "/Images/" + ImagenUrl.FileName;
+                         mascota.ImagenUrl = "/Images/" + NombreImagen;
                     }
                 }
 
