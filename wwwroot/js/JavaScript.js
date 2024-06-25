@@ -1,4 +1,22 @@
 ﻿
+function previewFile() {
+    const preview = document.getElementById('imagePreview');
+    const file = document.getElementById('formFileSm').files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = function () {
+        preview.src = reader.result;
+    }
+
+    if (file) {
+        reader.readAsDataURL(file); // Lee el archivo y lo envía a onloadend
+    } else {
+        preview.src = "";
+        preview.style.display = 'none'; // Oculta la imagen si no hay archivo
+    }
+}
+
+
 $(document).ready(function () {
     debugger;   
     $('body').on('click', '#CreateDuenoAlternativo', function () {

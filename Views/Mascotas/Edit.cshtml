@@ -11,7 +11,7 @@
 
 <h4>Datos de la mascota <i class="fa-solid fa-paw"></i> </h4>
 
-<form asp-action="Edit">
+<form asp-action="Edit" enctype="multipart/form-data">
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 <input type="hidden" asp-for="IdMascota" />           
 <input type="hidden" asp-for="IdDueno" />
@@ -56,11 +56,11 @@
 
     <div class="col-4 text-center">
         <div class="text-center">
-            <img src="~/Images/George.jpg" class="rounded img-thumbnail w-50 h-auto" alt="Imagen de la mascota">
+                <img id="imagePreview" src="@Url.Content(Model.ImagenUrl)" class="rounded img-thumbnail w-50 h-auto" alt="Imagen de la mascota">
         </div>
         <div class="text-center mt-1">
             <label for="formFileSm" class="form-label">Sube una foto de tu mascota aquí❗</label>
-            <input class="form-control form-control-sm" id="formFileSm" type="file">
+            <input asp-for="ImagenUrl" class="form-control form-control-sm" id="formFileSm" type="file" onchange="previewFile()">
         </div>
     </div>
 

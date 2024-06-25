@@ -13,7 +13,7 @@ namespace QRMascotas.ClasesModelo
 
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Fecha de nacimiento 🎂")]
-        public DateTime FechaNac => FechaNacimiento.Date;
+        public  DateTime FechaNac => FechaNacimiento.Date;
         
         public string? NombreDuenoA => IdDuenoAlternativoNavigation != null ? $"{IdDuenoAlternativoNavigation.Nombre} {IdDuenoAlternativoNavigation.ApellidoP} {IdDuenoAlternativoNavigation.ApellidoM}" : null;
        
@@ -38,6 +38,7 @@ namespace QRMascotas.ClasesModelo
                 DatosExtra = Mascota.DatosExtra,
                 Importante = Mascota.Importante,
                 Qr = Mascota.Qr,
+                ImagenUrl = Mascota.ImagenUrl,
                 IdDuenoAlternativoNavigation = Mascota.IdDuenoAlternativoNavigation,
                 IdDuenoNavigation = Mascota.IdDuenoNavigation,
                 IdEspecieNavigation = Mascota.IdEspecieNavigation

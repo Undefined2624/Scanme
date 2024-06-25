@@ -11,7 +11,7 @@
 
 <h4>Datos de la mascota <i class="fa-solid fa-paw"></i> </h4>
 
-<form asp-action="Create">
+<form asp-action="Create" enctype="multipart/form-data">
    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <div class="row w-100 mt-2">
@@ -39,29 +39,29 @@
             </div>
             <div class="form-group mt-3">
                 <label asp-for="Genero" class="control-label">Género</label>
-                <select id="Genero" class="form-select">
+                <select id="Genero" name="Genero" asp-for="Genero" class="form-select">
                     <option selected>Selecciona una opción</option>
-                    <option value="1">Macho</option>
-                    <option value="0">Hembra</option>
+                    <option value="true">Macho</option>
+                    <option value="false">Hembra</option>
                 </select>
             </div>
             <div class="form-group mt-3">
                 <label asp-for="Esterilizado" class="control-label">¿Está esterilizado/a?</label>
-                <select id="Esterilizado" class="form-select">
+                <select id="Esterilizado" name="Esterilizado" class="form-select">
                     <option selected>Selecciona una opción</option>
-                    <option value="1">Sí</option>
-                    <option value="0">No</option>
+                    <option value="true">Sí</option>
+                    <option value="false">No</option>
                 </select>
             </div>
         </div>
 
         <div class="col-4 text-center">
             <div class="text-center">
-                <img src="~/Images/George.jpg" class="rounded img-thumbnail w-50 h-auto" alt="Imagen de la mascota">
+                <img id="imagePreview" src="~/Images/default.jpg" class="rounded img-thumbnail w-50 h-auto" alt="Imagen de la mascota">
             </div>
             <div class="text-center mt-1">
                 <label for="formFileSm" class="form-label">Sube una foto de tu mascota aquí❗</label>
-                <input class="form-control form-control-sm" id="formFileSm" type="file">
+                <input asp-for="ImagenUrl" class="form-control form-control-sm" id="formFileSm" type="file" onchange="previewFile()">
             </div>
         </div>
     </div>

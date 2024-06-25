@@ -3,23 +3,28 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using QRMascotas.ClasesModelo;
 using QRMascotas.context;
+using Microsoft.AspNetCore.Hosting;
+
 
 namespace QRMascotas.Controllers
 {
     public class MascotasController : Controller
     {
         private readonly QrmascotasContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public MascotasController(QrmascotasContext context)
+        public MascotasController(QrmascotasContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            _hostEnvironment = hostEnvironment;
         }
 
         // GET: Mascotas
         public async Task<IActionResult> Index()
-        {
+         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Obtener el ID del usuario autenticado
 
             var qrmascotasContext = _context.Mascotas
@@ -52,7 +57,7 @@ namespace QRMascotas.Controllers
         // POST: Mascotas/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdMascota,IdDueno,IdDuenoAlternativo,Nombre,IdEspecie,FechaNacimiento,Genero,Color,Esterilizado,DatosExtra,Importante,Qr")] Mascota mascota)
+        public async Task<IActionResult> Create([Bind("IdMascota,IdDueno,IdDuenoAlternativo,Nombre,IdEspecie,FechaNacimiento,Genero,Color,Esterilizado,DatosExtra,Importante,Qr,ImagenUrl")] Mascota mascota, IFormFile ImagenUrl)
         {
             ModelState.Remove("IdDuenoNavigation");
             ModelState.Remove("IdEspecieNavigation");
@@ -62,6 +67,16 @@ namespace QRMascotas.Controllers
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 mascota.IdDueno = userId;
+
+                if (ImagenUrl != null && ImagenUrl.Length > 0)
+                {
+                    var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "Images", ImagenUrl.FileName);
+                    using (var fileStream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        await ImagenUrl.CopyToAsync(fileStream);
+                         mascota.ImagenUrl = "/Images/" + ImagenUrl.FileName;
+                    }
+                }
 
                 _context.Add(mascota);
                 await _context.SaveChangesAsync();
@@ -111,7 +126,7 @@ namespace QRMascotas.Controllers
         // POST: Mascotas/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdMascota,IdDueno,IdDuenoAlternativo,Nombre,IdEspecie,FechaNacimiento,Genero,Color,Esterilizado,DatosExtra,Importante,Qr")] Mascota mascota)
+        public async Task<IActionResult> Edit(int id, [Bind("IdMascota,IdDueno,IdDuenoAlternativo,Nombre,IdEspecie,FechaNacimiento,Genero,Color,Esterilizado,DatosExtra,Importante,Qr")] Mascota mascota, IFormFile ImagenUrl)
         {
             if (id != mascota.IdMascota)
             {
@@ -132,8 +147,16 @@ namespace QRMascotas.Controllers
                         mascota.IdDueno = existingMascota.IdDueno;
                         mascota.IdDuenoAlternativo = existingMascota.IdDuenoAlternativo;
                     }
-                                     
 
+                    if (ImagenUrl != null && ImagenUrl.Length > 0)
+                    {
+                        var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "Images", ImagenUrl.FileName);
+                        using (var fileStream = new FileStream(imagePath, FileMode.Create))
+                        {
+                            await ImagenUrl.CopyToAsync(fileStream);
+                            mascota.ImagenUrl = "/Images/" + ImagenUrl.FileName;
+                        }
+                    }
                     _context.Update(mascota);
                     await _context.SaveChangesAsync();
                 }

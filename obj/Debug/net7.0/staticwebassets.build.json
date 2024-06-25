@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lMWBgRb1pwKZfabqSufYIZadk542/yEUBplcyq7Uh+4=",
+  "Hash": "FWEhz5AFuyWtgqGgIevHHtZDFySY+0uybzc0sH+m030=",
   "Source": "QRMascotas",
   "BasePath": "_content/QRMascotas",
   "Mode": "Default",
@@ -1088,12 +1088,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\George.jpg",
+      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\default.jpg",
       "SourceId": "QRMascotas",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\",
       "BasePath": "_content/QRMascotas",
-      "RelativePath": "Images/George.jpg",
+      "RelativePath": "Images/default.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1102,7 +1102,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\George.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\default.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\fondosm.jpg",
+      "SourceId": "QRMascotas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\",
+      "BasePath": "_content/QRMascotas",
+      "RelativePath": "Images/fondosm.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\fondosm.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\george.jpg",
+      "SourceId": "QRMascotas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\",
+      "BasePath": "_content/QRMascotas",
+      "RelativePath": "Images/george.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\george.jpg"
     },
     {
       "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\iconoGato.png",
@@ -1190,12 +1224,12 @@
       "OriginalItemSpec": "wwwroot\\Images\\QrIcon.png"
     },
     {
-      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\Tom.jpg",
+      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\xa2.png",
       "SourceId": "QRMascotas",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\",
       "BasePath": "_content/QRMascotas",
-      "RelativePath": "Images/Tom.jpg",
+      "RelativePath": "Images/xa2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1204,7 +1238,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Tom.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\xa2.png"
     },
     {
       "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\js\\JavaScript.js",

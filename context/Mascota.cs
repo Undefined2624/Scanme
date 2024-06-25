@@ -6,7 +6,7 @@ namespace QRMascotas.context;
 
 public partial class Mascota
 {
-    public int IdMascota { get; set; }
+    public  int IdMascota { get; set; }
 
     public string IdDueno { get; set; } = null!;
 
@@ -16,7 +16,7 @@ public partial class Mascota
 
     public int IdEspecie { get; set; }
 
-    public DateTime FechaNacimiento { get; set; }
+    public  DateTime FechaNacimiento { get; set; }
 
     public bool Genero { get; set; }
 

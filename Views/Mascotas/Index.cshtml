@@ -11,8 +11,10 @@
             <h3>Mis Mascotas <i class="fa-solid fa-paw"></i></h3>
             <a class="btn btn-outline-primary ml-auto mb-3" asp-action="Create">Agregar Mascota <i class="fa-solid fa-plus"></i></a>
         </div>
-        
-    @foreach (var item in Model)
+
+    @if (Model != null && Model.Any())
+        {
+    foreach (var item in Model)
         {
             <div class="card border-warning mb-3 ps-2">
                 <div style="width: 67%">
@@ -21,7 +23,7 @@
 
                 <div class="row g-0 m-0">
                     <div class="col-2 text-center">
-                        <img src="/Images/George.jpg" class="rounded img-thumbnail w-100 h-auto">
+                        <img src="@item.ImagenUrl" class="rounded img-thumbnail w-100 h-auto">
                     </div>
                     <div class="col-10">
                         <div class="card-body">
@@ -138,6 +140,14 @@
             </div>
      </div>
 </div>
+        }
+        }
+        else
+        {
+            <div class="text-center">
+                <img src="/Images/fondosm.jpg" class="img-fluid w-50" alt="No hay mascotas">
+                <h5>No hay mascotas agregadas :(</h5>
+            </div>
         }
                       
 </div>
