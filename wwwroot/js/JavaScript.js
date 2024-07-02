@@ -64,6 +64,7 @@ $(document).ready(function () {
     });
 
     $('body').on('click', '#EliminarDuenoAlternativo', function () {
+        debugger;
         var DuenoId = $(this).data('dueno-id');
         $('#exampleModal').modal('show');
 

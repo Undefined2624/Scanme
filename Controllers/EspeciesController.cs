@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +11,7 @@ using QRMascotas.context;
 
 namespace QRMascotas.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class EspeciesController : Controller
     {
         private readonly QrmascotasContext _context;
@@ -23,7 +26,7 @@ namespace QRMascotas.Controllers
         {
               return _context.Especies != null ? 
                           View(await _context.Especies.ToListAsync()) :
-                          Problem("Entity set 'QrmascotasContext.Especies'  is null.");
+                          Problem("Entity set 'QrmascotasContext.Especies' is null.");
         }
 
         // GET: Especies/Details/5
@@ -51,8 +54,6 @@ namespace QRMascotas.Controllers
         }
 
         // POST: Especies/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdEspecie,Nombre")] Especy especy)
@@ -83,8 +84,6 @@ namespace QRMascotas.Controllers
         }
 
         // POST: Especies/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdEspecie,Nombre")] Especy especy)

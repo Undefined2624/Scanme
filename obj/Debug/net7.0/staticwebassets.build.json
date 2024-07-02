@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "u054BmGW8c/A+xIPKDb+N2kY9gDn1tiJ0ktLSGbGfqE=",
+  "Hash": "cp9W1X4O1GgzvmHEX74sjXU84XCFUUW9lmIPMujV2bw=",
   "Source": "QRMascotas",
   "BasePath": "_content/QRMascotas",
   "Mode": "Default",
@@ -1088,12 +1088,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\a8bead08-ca0a-40f4-9d28-56c1c951e4a7.jpg",
+      "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\40406da1-7288-40ba-b4dc-0a53ce3344a7.png",
       "SourceId": "QRMascotas",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\",
       "BasePath": "_content/QRMascotas",
-      "RelativePath": "Images/a8bead08-ca0a-40f4-9d28-56c1c951e4a7.jpg",
+      "RelativePath": "Images/40406da1-7288-40ba-b4dc-0a53ce3344a7.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1102,7 +1102,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\a8bead08-ca0a-40f4-9d28-56c1c951e4a7.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\40406da1-7288-40ba-b4dc-0a53ce3344a7.png"
     },
     {
       "Identity": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\default.jpg",

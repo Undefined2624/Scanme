@@ -53,8 +53,6 @@ namespace QRMascotas.Controllers
         }
 
         // POST: DuenoAlternativo/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(DuenoAlternativo duenoAlternativo, int MascotaId)
@@ -156,7 +154,7 @@ namespace QRMascotas.Controllers
         // POST: DuenoAlternativo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int DuenoId)
+        public async Task<IActionResult> DeleteConfirmed(int IdDuenoAlternativo)
         {
             if (_context.DuenoAlternativos == null)
             {
@@ -164,7 +162,7 @@ namespace QRMascotas.Controllers
             }
 
             // Obtener las mascotas que tienen el DuenoAlternativo que se quiere eliminar
-            var mascotas = _context.Mascotas.Where(m => m.IdDuenoAlternativo == DuenoId).ToList();
+            var mascotas = _context.Mascotas.Where(m => m.IdDuenoAlternativo == IdDuenoAlternativo).ToList();
 
             // Desvincular las mascotas del DuenoAlternativo
             foreach (var mascota in mascotas)
@@ -176,7 +174,7 @@ namespace QRMascotas.Controllers
             _context.Mascotas.UpdateRange(mascotas);
             await _context.SaveChangesAsync();
 
-            var duenoAlternativo = await _context.DuenoAlternativos.FindAsync(DuenoId);
+            var duenoAlternativo = await _context.DuenoAlternativos.FindAsync(IdDuenoAlternativo);
             if (duenoAlternativo != null)
             {
                 _context.DuenoAlternativos.Remove(duenoAlternativo);

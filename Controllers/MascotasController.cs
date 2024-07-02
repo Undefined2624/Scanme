@@ -250,8 +250,22 @@ namespace QRMascotas.Controllers
                 return Problem("Entity set 'QrmascotasContext.Mascotas'  is null.");
             }
             var mascota = await _context.Mascotas.FindAsync(IdMascota);
+
             if (mascota != null)
             {
+                //Guardar imagen actual
+                var ImagenActual = mascota.ImagenUrl;
+                //Eliminar imagen de los archivos
+                if (ImagenActual != null)
+                {
+                    ImagenActual = ImagenActual.Replace("/Images/", "");
+                    var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "Images", ImagenActual);
+                    if (System.IO.File.Exists(imagePath))
+                    {
+                        System.IO.File.Delete(imagePath);
+                    }
+                }
+
                 _context.Mascotas.Remove(mascota);
             }
 
