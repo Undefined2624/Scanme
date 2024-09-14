@@ -136,7 +136,7 @@ namespace QRMascotas.Controllers
         // POST: Mascotas/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdMascota,IdDueno,IdDuenoAlternativo,Nombre,IdEspecie,FechaNacimiento,Genero,Color,Esterilizado,DatosExtra,Importante,Qr")] Mascota mascota, IFormFile ImagenUrl)
+        public async Task<IActionResult> Edit(int id, [Bind("IdMascota,IdDueno,IdDuenoAlternativo,Nombre,IdEspecie,FechaNacimiento,Genero,Color,Esterilizado,DatosExtra,Importante,Qr,ImagenUrl")] Mascota mascota, IFormFile ImagenUrl)
         {
             if (id != mascota.IdMascota)
             {
@@ -145,7 +145,9 @@ namespace QRMascotas.Controllers
 
             ModelState.Remove("IdDuenoNavigation");
             ModelState.Remove("IdEspecieNavigation");
-
+            ModelState.Remove("IdDuenoAlternativo");
+            ModelState.Remove("IdDuenoAlternativoNavigation");
+            ModelState.Remove("ImagenUrl");
 
             if (ModelState.IsValid)
             {
@@ -153,6 +155,7 @@ namespace QRMascotas.Controllers
                 {
                     // Mantener el IdDueno existente
                     var existingMascota = await _context.Mascotas.AsNoTracking().FirstOrDefaultAsync(m => m.IdMascota == id);
+                    
                     if (existingMascota != null)
                     {
                         mascota.IdDueno = existingMascota.IdDueno;

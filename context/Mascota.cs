@@ -1,6 +1,7 @@
 ﻿using QRMascotas.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace QRMascotas.context;
 
@@ -16,6 +17,7 @@ public partial class Mascota
 
     public int IdEspecie { get; set; }
 
+    [DataType(DataType.Date)]
     public  DateTime FechaNacimiento { get; set; }
 
     public bool Genero { get; set; }

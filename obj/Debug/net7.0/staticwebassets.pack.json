@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\40406da1-7288-40ba-b4dc-0a53ce3344a7.png",
-      "PackagePath": "staticwebassets\\Images\\40406da1-7288-40ba-b4dc-0a53ce3344a7.png"
-    },
-    {
       "Id": "C:\\Users\\prisc\\Downloads\\QR-main\\QR-main\\wwwroot\\Images\\QrIcon.png",
       "PackagePath": "staticwebassets\\Images\\QrIcon.png"
     },
